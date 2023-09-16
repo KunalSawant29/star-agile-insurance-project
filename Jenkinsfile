@@ -36,6 +36,10 @@ stages {
       sh 'docker push kunalsawant29/insure-me-project:1.0'
     }
   }
+
+  stage ('Deployment of container') {
+    steps {
+      ansiblePlaybook credentialsId: 'ubuntussh', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
     }
 }
     
