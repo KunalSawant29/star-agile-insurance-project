@@ -41,6 +41,8 @@ stages {
     steps {
       ansiblePlaybook credentialsId: 'ubuntussh', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
     }
+  }
+    }
 }
     
     
