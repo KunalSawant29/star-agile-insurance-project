@@ -24,7 +24,7 @@ stages {
 
   stage ('Docker Build') {
     steps {
-      sh 'docker build -t kunalsawant29/Insure-me-project:1.0 .'
+      sh 'docker build -t kunalsawant29/insure-me-project:1.0 .'
     }
   }
     }
