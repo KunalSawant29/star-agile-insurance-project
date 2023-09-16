@@ -3,7 +3,7 @@ pipeline {
   tools {
     maven 'M2_HOME'
         }
-stages
+stages {
   stage ('Git checkout') {
     steps {
       git 'https://github.com/KunalSawant29/star-agile-insurance-project.git'
@@ -11,6 +11,12 @@ stages
   }
 
   stage ('Build') {
+    steps {
+      sh 'mvn clean package'
+    }
+  }
+}
+}
     
     
 
