@@ -27,6 +27,15 @@ stages {
       sh 'docker build -t kunalsawant29/insure-me-project:1.0 .'
     }
   }
+
+  stage ('Push Docker image to Dockerhub') {
+    steps {
+      withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+      sh 'docker login -u kunalsawant29 -p ${dockerhubpwd}'
+}
+      sh 'docker push kunalsawant29/insure-me-project:1.0'
+    }
+  }
     }
 }
     
