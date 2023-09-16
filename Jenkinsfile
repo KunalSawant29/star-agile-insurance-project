@@ -5,6 +5,12 @@ pipeline {
         }
 stages
   stage ('Git checkout') {
+    steps {
+      git 'https://github.com/KunalSawant29/star-agile-insurance-project.git'
+    }
+  }
+
+  stage ('Build') {
     
     
 
